@@ -1,0 +1,29 @@
+<head>
+  <title>votacao</title>
+</head>
+
+<body>
+	{{> loginButtons}}
+
+	{{#if currentUser}}
+		
+	{{else}}
+		{{> addReports}}
+		{{> showReports}}
+	{{/if}}
+</body>
+
+<template name="addReports">
+	<input type="text" placeholder="Eu vi..." id="report-input" />
+	<input type="button" value="Enviar" id ="add-report" />
+</template>
+
+<template name="showReports">
+	<ul>
+	{{#each reports}}
+		<li>
+			{{text}}
+		</li>
+	{{/each}}
+	</ul>
+</template>
